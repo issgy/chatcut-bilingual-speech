@@ -4,8 +4,8 @@
     "folder_url_or_id": null
   },
   "delivery": {
-    "provider": "feishu_drive",
-    "folder_url_or_token": null
+    "provider": "local",
+    "output_dir": null
   },
   "subtitle_style": {
     "english_font": null,

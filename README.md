@@ -4,7 +4,7 @@
   <img src="assets/banner-zh.jpg" alt="chatcut-bilingual-speech 头图：深色背景上铺满双语成片画面，左侧标题「英文演讲里的励志金句，剪成中英双语短视频」，下方是字幕、B-roll、A-roll 三轨剪辑时间轴示意" width="880">
 
   <p><strong>把英文演讲里的励志金句，剪成中英双语短视频</strong><br>
-  <sub>可编辑时间轴，不出扁平成片 · 六个节点等你确认 · 交付核验后才算完成</sub></p>
+  <sub>可编辑时间轴，不出扁平成片 · 成品直接存到本地 · 核验通过才算完成</sub></p>
 
   <p>
     <a href="#快速开始"><strong>快速开始</strong></a> &nbsp;·&nbsp;
@@ -34,11 +34,11 @@
 - **全程在 ChatCut 里剪**：A-roll、双语字幕、B-roll、导出都落在可编辑的 ChatCut 时间轴上，随时能打开改，不用本地渲染的扁平视频代替。
 - **字幕排版有硬规则**：英上中下、白色粗体黑描边、每种语言最多一行；放不下就按语义和停顿拆成连续字幕，绝不缩字号、压字距或改写英文原话。
 - **B-roll 随机但不重复**：只按 Google Drive 子文件夹名（如「雨夜城市街道」）挑分类，再随机无放回抽取，两条视频之间按文件 ID 去重，全部静音、叠化衔接，演讲原声一帧不动。
-- **交付要核验才算数**：导出后上传飞书，回读文件确认可访问才汇报完成；全部成功后才把本次临时媒体移入废纸篓，从不永久删除。
+- **成品直接存到本地**：导出的 MP4 自动保存到你指定的文件夹（默认工作区下的 `exports/`），逐个核验编码、时长和音轨才汇报完成；之后只把本次临时媒体移入废纸篓，成品永远不动。
 
 ## 成品案例
 
-两条样片分别来自两段不同的演讲，都由本 Skill 按六个节点完整走完：主题地图 → A-roll → 双语字幕 → 随机 B-roll → 导出交付。点击封面观看成片。
+两条样片分别来自两段不同的演讲，都由本 Skill 按六个节点完整走完：主题地图 → A-roll → 双语字幕 → 随机 B-roll → 导出到本地。点击封面观看成片。
 
 <table>
   <tr>
@@ -111,7 +111,7 @@ git -C ~/.claude/skills/chatcut-bilingual-speech pull
 
 **2. 准备好外部服务**
 
-Skill 只包含流程规则，不附带账号、凭证或软件。你的 Agent 环境里需要能用 ChatCut、Google Drive 和飞书云盘（连接器、插件或已认证的 CLI 都可以），详见[依赖一览](#依赖一览)。
+Skill 只包含流程规则，不附带账号、凭证或软件。你的 Agent 环境里需要能用 ChatCut 和 Google Drive（连接器、插件或已认证的 CLI 都可以），并能把文件写到本地，详见[依赖一览](#依赖一览)。
 
 **3. 重开一个 Agent 任务，说一句话**
 
@@ -119,7 +119,7 @@ Skill 只包含流程规则，不附带账号、凭证或软件。你的 Agent �
 用 chatcut-bilingual-speech 处理这个视频：<视频链接或本地路径>
 ```
 
-第一次用时，Agent 会在第一个节点顺带问你 B-roll 素材库和飞书交付文件夹，直接在对话里回答就行，不用手动改配置文件。
+第一次用时，Agent 会在第一个节点顺带问你 B-roll 素材库在哪，并告诉你成品会存到哪个文件夹。直接在对话里回答就行，不用手动改配置文件。
 
 <div align="right"><a href="#readme-top">↑ 回到顶部</a></div>
 
@@ -136,7 +136,7 @@ flowchart LR
   E --> F[随机抽取<br>下载 · 叠化]
   F --> G([⑥ 最终成片])
   G --> H[导出 MP4]
-  H --> I[上传飞书<br>回读核验]
+  H --> I[保存到本地<br>逐个核验]
   I --> J[临时文件<br>移入废纸篓]
   classDef gate stroke:#f97316,stroke-width:2px
   class A,B,C,D,E,G gate
@@ -146,12 +146,12 @@ flowchart LR
 
 | 节点 | Agent 做什么 | 需要你做的 |
 |---|---|---|
-| **① 源视频** | 核对你给的视频链接或本地文件，顺带收集缺失的素材库和交付位置 | 提供具体视频。只给演讲者、频道或主题不算，Agent 不会自己去搜 |
+| **① 源视频** | 核对你给的视频链接或本地文件，顺带收集缺失的素材库，告知成品保存位置 | 提供具体视频。只给演讲者、频道或主题不算，Agent 不会自己去搜 |
 | **② 主题地图** | 提炼互不重复的金句主题（默认两个）：源时间段、英文原文、中文翻译、片段作用、拼接顺序、断句和指代风险 | 确认地图。不确认不会进 ChatCut |
 | **③ A-roll** | 在 ChatCut 建时间轴，按地图剪辑，保留原声、不加 BGM，默认 1920×1080 / 30fps | 在 ChatCut 里审片 |
 | **④ 双语字幕** | 出样式样张并铺满全片字幕，按实际画幅测量每一条是否超行 | 一并确认样式与字幕时间轴 |
 | **⑤ B-roll 切入点** | 问每条视频首次进入 B-roll 的时间；拿到答案后自动抽素材、下载、编排 | 每条给一个秒数、时间码或能唯一定位的台词 |
-| **⑥ 最终成片** | 检查 B-roll、叠化、字幕与音频，给出素材使用摘要 | 确认后自动导出、交付、清理，不再额外问一次 |
+| **⑥ 最终成片** | 检查 B-roll、叠化、字幕与音频，给出素材使用摘要 | 确认后自动导出、存到本地、清理，不再额外问一次 |
 
 > [!IMPORTANT]
 > 你的确认只对当时展示的版本有效。之后改了什么，Agent 会回到受影响的节点重新确认，没变的内容不重复问。
@@ -166,7 +166,7 @@ flowchart LR
 | 指定主题和时长 | 用 chatcut-bilingual-speech 处理这个视频，一条讲失败的价值、一条讲专注，每条 60 秒左右：`<链接>` |
 | 只要一条 | 用 chatcut-bilingual-speech 从这个演讲里剪一条双语短视频：`<链接>` |
 | 自带字幕文件 | 用 chatcut-bilingual-speech 处理这个本地视频，配套英文字幕是同目录的 `talk.srt`：`<路径>` |
-| 保留临时文件 | 用 chatcut-bilingual-speech 处理这个视频，交付后不要清理本地文件：`<链接>` |
+| 保留临时文件 | 用 chatcut-bilingual-speech 处理这个视频，完成后不要清理临时文件：`<链接>` |
 
 > [!TIP]
 > 在 Claude Code 里可以用 `/chatcut-bilingual-speech`，在 Codex 里用 `$chatcut-bilingual-speech`；WorkBuddy 等其他 Agent 直接描述需求即可。
@@ -174,8 +174,8 @@ flowchart LR
 最后你会得到：
 
 - 每条保留视频的 **MP4 成片**（H.264、1920×1080、30fps），以及 ChatCut 中对应的**可编辑时间轴**；
-- 上传到飞书交付文件夹的文件和**访问链接**，附上核验结果；
-- 任务目录里留下的追溯材料：`topic-map.json`（主题地图）、`workflow-state.json`（节点确认、素材来源、交付凭据等）。
+- 成品保存在本地文件夹里，按 `日期-序号-主题标题.mp4` 命名，附上每条的**绝对路径**和核验结果；
+- 任务目录里留下的追溯材料：`topic-map.json`（主题地图）、`workflow-state.json`（节点确认、素材来源、成品路径等）。
 
 <div align="right"><a href="#readme-top">↑ 回到顶部</a></div>
 
@@ -190,8 +190,8 @@ flowchart LR
     "folder_url_or_id": "https://drive.google.com/drive/folders/<你的素材根目录>"
   },
   "delivery": {
-    "provider": "feishu_drive",
-    "folder_url_or_token": "https://<你的飞书域名>/drive/folder/<交付文件夹>"
+    "provider": "local",
+    "output_dir": "~/Movies/励志金句"
   },
   "subtitle_style": {
     "english_font": null,
@@ -210,12 +210,12 @@ flowchart LR
 | 字段 | 说明 | 默认 |
 |---|---|---|
 | `broll_library.folder_url_or_id` | Google Drive 素材根目录的链接或 ID，子文件夹名即素材分类 | 未配置（不会全盘搜索） |
-| `delivery.folder_url_or_token` | 飞书交付文件夹的链接或 token | 未配置（不会用任何默认文件夹） |
+| `delivery.output_dir` | 成品保存目录，绝对路径或相对配置文件的路径；不存在会自动创建，同名文件不覆盖 | 工作区下的 `exports/` |
 | `subtitle_style.*_font` | 中英文字体；留空时自动选当前可用的粗体 | `null` |
 | `subtitle_style.*_size_1080p` | 1080p 下的字号（px），确认后不会为塞进一行而缩小 | `58` |
 | `subtitle_style.black_outer_outline_px` | 黑色外描边宽度（px） | `8` |
 | `subtitle_style.max_width_ratio` | 单行字幕最大宽度占画面宽度的比例 | `0.94` |
-| `cleanup.move_task_temporary_files_to_trash` | 交付全部核验成功后，是否把本次临时媒体移入废纸篓 | `true` |
+| `cleanup.move_task_temporary_files_to_trash` | 成品全部保存并核验后，是否把本次临时媒体移入废纸篓 | `true` |
 
 **优先级**：本次对话指令 > 你指定的配置文件 > 工作区 `chatcut-bilingual-speech.config.json` > 随包默认值。
 
@@ -307,14 +307,15 @@ Agent 会按最终画幅、字体、字号和安全区逐条测量。超行时�
 
 <br>
 
-只在**全部上传并核验成功之后**，才把本次登记过绝对路径的临时文件移入系统废纸篓：下载的源视频、实际用到的 B-roll、ChatCut 导出缓存、浏览器下载副本等。
+只在**全部成品保存到本地并核验成功之后**，才把本次登记过绝对路径的临时文件移入系统废纸篓：下载的源视频、实际用到的 B-roll、ChatCut 导出缓存、浏览器下载副本等。
 
 - 用系统可恢复的「移入废纸篓」，从不用 `rm` 永久删除；移不进去就保留并报告。
 - 只匹配本次登记的路径，不按通配符清理下载目录或其他任务的文件。
 - 不碰 ChatCut 云端项目、Google Drive 原始素材、你原有的源文件。
-- 会保留主题地图、字幕数据、素材来源清单和飞书交付凭据，方便追溯。
+- 成品文件夹里的 MP4 永远不在清理范围内。
+- 会保留主题地图、字幕数据、素材来源清单和成品路径记录，方便追溯。
 
-部分上传失败时，所有仍需要的文件都会保留，并告诉你哪条成功、哪条待重试。设置 `cleanup.move_task_temporary_files_to_trash: false` 可完全关闭清理。
+部分成品保存失败时，所有仍需要的文件都会保留，并告诉你哪条成功、哪条待重试。设置 `cleanup.move_task_temporary_files_to_trash: false` 可完全关闭清理。
 
 </details>
 
@@ -342,9 +343,9 @@ Agent 会按最终画幅、字体、字号和安全区逐条测量。超行时�
 | ChatCut | ③ A-roll 到 ⑥ 最终成片、导出 | 主题地图仍能完成，剪辑暂停 |
 | 字幕轨 / 转写能力 | ② 主题地图 | 请你提供带时间码的 VTT / SRT |
 | Google Drive | ⑤ 列举分类、下载抽中的素材 | 停在素材抽取 |
-| 飞书云盘 | ⑥ 之后的上传与回读核验 | 成片留在 ChatCut，不汇报交付完成 |
+| 本地写入 | ⑥ 之后把成品保存到成品目录 | 成片留在 ChatCut，不汇报完成 |
 | 可读写的任务目录 | 全程：状态文件、临时媒体 | 无法开始 |
-| 可恢复的「移入废纸篓」 | 交付后的清理 | 跳过清理，保留文件并报告 |
+| 可恢复的「移入废纸篓」 | 成品保存后的清理 | 跳过清理，保留文件并报告 |
 
 <details>
 <summary><strong>目录结构</strong></summary>
@@ -359,7 +360,7 @@ chatcut-bilingual-speech/
 └── references/
     ├── setup.md              # 配置与接入说明
     ├── topic-map.md          # 主题地图规则与 topic-map.json 格式
-    └── broll-delivery.md     # B-roll 选材、导出、飞书交付与清理规则
+    └── broll-delivery.md     # B-roll 选材、导出到本地与清理规则
 ```
 
 </details>
@@ -368,7 +369,7 @@ chatcut-bilingual-speech/
 
 - [配置与接入：所需能力、配置来源与优先级](references/setup.md)
 - [主题地图：选题与剪辑逻辑、时间码规则、`topic-map.json` 格式](references/topic-map.md)
-- [B-roll、导出、飞书交付与本地清理](references/broll-delivery.md)
+- [B-roll 选材、导出到本地与临时文件清理](references/broll-delivery.md)
 
 ## 使用须知
 
@@ -377,7 +378,7 @@ chatcut-bilingual-speech/
 
 ## 反馈与贡献
 
-欢迎在 [Issues](https://github.com/issgy/chatcut-bilingual-speech/issues) 提问题或建议。剪辑或字幕问题请附上对应节点的 ChatCut 截图，以及 `workflow-state.json` 中相关的部分（记得先去掉链接和 token）。
+欢迎在 [Issues](https://github.com/issgy/chatcut-bilingual-speech/issues) 提问题或建议。剪辑或字幕问题请附上对应节点的 ChatCut 截图，以及 `workflow-state.json` 中相关的部分（记得先去掉素材库链接）。
 
 <!-- TODO(关于作者)：可选，填上后取消注释
 ## 关于作者
