@@ -1,11 +1,9 @@
 {
   "broll_library": {
-    "provider": "google_drive",
-    "folder_url_or_id": null
+    "location": null
   },
   "delivery": {
-    "provider": "feishu_drive",
-    "folder_url_or_token": null
+    "output_dir": null
   },
   "subtitle_style": {
     "english_font": null,
