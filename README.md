@@ -1,11 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <!-- TODO(头图)：放好 assets/banner-zh.jpg（建议 2560×1280）后取消下一行注释
-  <img src="assets/banner-zh.jpg" alt="chatcut-bilingual-speech 头图：一段英文演讲，剪成两条中英双语短视频" width="880">
-  -->
-
-  <h1>chatcut-bilingual-speech</h1>
+  <img src="assets/banner-zh.jpg" alt="chatcut-bilingual-speech 头图：深色背景上铺满双语成片画面，左侧标题「一段英文演讲，剪成两条双语短视频」，下方是带六个确认节点的字幕、B-roll、A-roll 三轨时间轴示意" width="880">
 
   <p><strong>一段英文演讲，剪成两条中英双语短视频</strong><br>
   <sub>可编辑时间轴，不出扁平成片 · 六个节点等你确认 · 交付核验后才算完成</sub></p>
@@ -13,6 +9,7 @@
   <p>
     <a href="#快速开始"><strong>快速开始</strong></a> &nbsp;·&nbsp;
     <a href="#能做什么">了解能力</a> &nbsp;·&nbsp;
+    <a href="#成品案例">成品案例</a> &nbsp;·&nbsp;
     <a href="#六个确认节点">六个节点</a> &nbsp;·&nbsp;
     <a href="#配置">配置</a> &nbsp;·&nbsp;
     <a href="#常见问题">常见问题</a>
@@ -24,6 +21,7 @@
     <a href="https://github.com/issgy/chatcut-bilingual-speech/commits/main"><img src="https://img.shields.io/github/last-commit/issgy/chatcut-bilingual-speech?color=7c3aed&labelColor=black&style=flat-square" alt="最近提交"></a>
     <img src="https://img.shields.io/badge/agent%20skills-open%20format-f97316?labelColor=black&style=flat-square" alt="开放 Agent Skills 格式">
     <img src="https://img.shields.io/badge/editor-ChatCut-369eff?labelColor=black&style=flat-square" alt="基于 ChatCut">
+    <img src="https://img.shields.io/badge/works%20with-Claude%20Code%20%C2%B7%20Codex%20%C2%B7%20WorkBuddy-10a37f?labelColor=black&style=flat-square" alt="支持 Claude Code、Codex、WorkBuddy">
     <!-- TODO(许可证)：仓库加上 LICENSE 文件后取消注释
     <a href="LICENSE"><img src="https://img.shields.io/github/license/issgy/chatcut-bilingual-speech?color=white&labelColor=black&style=flat-square" alt="License"></a>
     -->
@@ -38,22 +36,30 @@
 - **B-roll 随机但不重复**：只按 Google Drive 子文件夹名（如「雨夜城市街道」）挑分类，再随机无放回抽取，两条视频之间按文件 ID 去重，全部静音、叠化衔接，演讲原声一帧不动。
 - **交付要核验才算数**：导出后上传飞书，回读文件确认可访问才汇报完成；全部成功后才把本次临时媒体移入废纸篓，从不永久删除。
 
-<!-- TODO(成品案例)：有样片后取消注释，替换为你的视频/封面
 ## 成品案例
+
+两条样片分别来自两段不同的演讲，都由本 Skill 按六个节点完整走完：主题地图 → A-roll → 双语字幕 → 随机 B-roll → 导出交付。点击封面观看成片。
 
 <table>
   <tr>
-    <td width="50%" align="center" valign="top"><strong>主题一标题</strong><br><sub>演讲者 · 时长</sub><br>
-      视频链接（拖进 GitHub 编辑器得到的 https://github.com/user-attachments/assets/... 地址，单独一行即可渲染为播放器）
+    <td width="50%" align="center" valign="top">
+      <strong>把生活留给值得的人和事</strong><br>
+      <sub>泰勒·斯威夫特 · 2022 纽约大学毕业演讲 · 37 秒</sub><br><br>
+      <!-- TODO(视频链接)：把下面的 href 换成 user-attachments 视频地址 -->
+      <a href="assets/examples/taylor-swift-worth-it-cover.jpg"><img src="assets/examples/taylor-swift-worth-it-cover.jpg" alt="成片一封面：泰勒·斯威夫特身穿纽约大学紫色博士袍演讲，底部双语字幕英文 is about catch and release.，中文 就在于懂得取舍。" width="400"></a>
     </td>
-    <td width="50%" align="center" valign="top"><strong>主题二标题</strong><br><sub>演讲者 · 时长</sub><br>
-      视频链接
+    <td width="50%" align="center" valign="top">
+      <strong>毅力，就是热情与坚持</strong><br>
+      <sub>安吉拉·达克沃斯 · TED 演讲 · 26 秒</sub><br><br>
+      <!-- TODO(视频链接)：把下面的 href 换成 user-attachments 视频地址 -->
+      <a href="assets/examples/angela-duckworth-grit-cover.jpg"><img src="assets/examples/angela-duckworth-grit-cover.jpg" alt="成片二封面：安吉拉·达克沃斯站在 TED 舞台红色地毯上演讲，底部双语字幕英文 Grit is passion and perseverance，中文 毅力，就是热情与坚持。" width="400"></a>
     </td>
   </tr>
 </table>
 
-两条均来自同一段演讲，由本 Skill 一次产出。
--->
+- **A-roll**：开头是演讲原画面，抛出主题句；原声全程保留，没有背景音乐。
+- **B-roll**：从用户确认的切入点开始，接入从素材库随机抽到的海浪、日落等风景素材，静音、叠化衔接。
+- **字幕**：英上中下、白色粗体黑描边，每种语言一行，B-roll 段同样保持同步。
 
 <div align="right"><a href="#readme-top">↑ 回到顶部</a></div>
 
@@ -72,7 +78,13 @@ git clone https://github.com/issgy/chatcut-bilingual-speech.git ~/.claude/skills
 Codex：
 
 ```bash
-git clone https://github.com/issgy/chatcut-bilingual-speech.git ~/.codex/skills/chatcut-bilingual-speech
+git clone https://github.com/issgy/chatcut-bilingual-speech.git ~/.agents/skills/chatcut-bilingual-speech
+```
+
+WorkBuddy（克隆后重启 WorkBuddy；也可以在对话里直接把文件夹交给它导入）：
+
+```bash
+git clone https://github.com/issgy/chatcut-bilingual-speech.git ~/.workbuddy/skills/chatcut-bilingual-speech
 ```
 
 <details>
@@ -80,7 +92,7 @@ git clone https://github.com/issgy/chatcut-bilingual-speech.git ~/.codex/skills/
 
 <br>
 
-**Windows PowerShell**（Codex 把 `.claude` 换成 `.codex`）：
+**Windows PowerShell**（以 Claude Code 为例，其他 Agent 把 `.claude` 换成 `.agents` 或 `.workbuddy`）：
 
 ```powershell
 New-Item -ItemType Directory -Force "$HOME\.claude\skills" | Out-Null
@@ -157,7 +169,7 @@ flowchart LR
 | 保留临时文件 | 用 chatcut-bilingual-speech 处理这个视频，交付后不要清理本地文件：`<链接>` |
 
 > [!TIP]
-> 在 Claude Code 里可以用 `/chatcut-bilingual-speech`，在 Codex 里用 `$chatcut-bilingual-speech`，也可以直接描述需求。
+> 在 Claude Code 里可以用 `/chatcut-bilingual-speech`，在 Codex 里用 `$chatcut-bilingual-speech`；WorkBuddy 等其他 Agent 直接描述需求即可。
 
 最后你会得到：
 
@@ -343,6 +355,7 @@ Agent 会按最终画幅、字体、字号和安全区逐条测量。超行时�
 chatcut-bilingual-speech/
 ├── SKILL.md                  # 主流程与六个确认节点
 ├── config.example.json       # 示例配置（不含真实地址）
+├── assets/                   # README 头图与成品案例封面（不影响 Skill 运行）
 └── references/
     ├── setup.md              # 配置与接入说明
     ├── topic-map.md          # 主题地图规则与 topic-map.json 格式
