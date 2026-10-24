@@ -1,0 +1,21 @@
+{
+  "broll_library": {
+    "provider": "google_drive",
+    "folder_url_or_id": null
+  },
+  "delivery": {
+    "provider": "feishu_drive",
+    "folder_url_or_token": null
+  },
+  "subtitle_style": {
+    "english_font": null,
+    "chinese_font": null,
+    "english_size_1080p": 58,
+    "chinese_size_1080p": 58,
+    "black_outer_outline_px": 8,
+    "max_width_ratio": 0.94
+  },
+  "cleanup": {
+    "move_task_temporary_files_to_trash": true
+  }
+}

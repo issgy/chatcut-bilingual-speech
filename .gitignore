@@ -1,0 +1,4 @@
+.DS_Store
+# 使用者自己的真实配置与任务状态不入库
+chatcut-bilingual-speech.config.json
+workflow-state.json
