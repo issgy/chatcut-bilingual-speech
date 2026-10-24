@@ -38,27 +38,60 @@
 
 ## 成品案例
 
-两条样片分别来自两段不同的演讲，都由本 Skill 按六个节点完整走完：主题地图 → A-roll → 双语字幕 → 随机 B-roll → 导出到本地。点击封面观看成片。
+四条样片分别来自四段不同的演讲，都由本 Skill 完整走完：选题 → A-roll → 双语字幕 → 随机 B-roll → 导出到本地。**点击封面播放。**
 
 <table>
   <tr>
     <td width="50%" align="center" valign="top">
       <strong>把生活留给值得的人和事</strong><br>
       <sub>泰勒·斯威夫特 · 2022 纽约大学毕业演讲 · 37 秒</sub><br><br>
-      <!-- TODO(视频链接)：把下面的 href 换成 user-attachments 视频地址 -->
-      <a href="assets/examples/taylor-swift-worth-it-cover.jpg"><img src="assets/examples/taylor-swift-worth-it-cover.jpg" alt="成片一封面：泰勒·斯威夫特身穿纽约大学紫色博士袍演讲，底部双语字幕英文 is about catch and release.，中文 就在于懂得取舍。" width="400"></a>
+      <a href="https://github.com/user-attachments/assets/bba4e597-c5b5-4e02-9549-5233923adf8b"><img src="assets/examples/taylor-swift-worth-it-cover.jpg" alt="泰勒·斯威夫特身穿纽约大学紫色博士袍演讲，双语字幕 is about catch and release. / 就在于懂得取舍。" width="400"></a>
     </td>
     <td width="50%" align="center" valign="top">
       <strong>毅力，就是热情与坚持</strong><br>
       <sub>安吉拉·达克沃斯 · TED 演讲 · 26 秒</sub><br><br>
-      <!-- TODO(视频链接)：把下面的 href 换成 user-attachments 视频地址 -->
-      <a href="assets/examples/angela-duckworth-grit-cover.jpg"><img src="assets/examples/angela-duckworth-grit-cover.jpg" alt="成片二封面：安吉拉·达克沃斯站在 TED 舞台红色地毯上演讲，底部双语字幕英文 Grit is passion and perseverance，中文 毅力，就是热情与坚持。" width="400"></a>
+      <a href="https://github.com/user-attachments/assets/c9ec7ee7-e4c9-46ba-ae8a-7bed21bd6f5b"><img src="assets/examples/angela-duckworth-grit-cover.jpg" alt="安吉拉·达克沃斯在 TED 舞台演讲，双语字幕 Grit is passion and perseverance / 毅力，就是热情与坚持。" width="400"></a>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <strong>做出只属于你的贡献</strong><br>
+      <sub>黄仁勋 · 对谈 · 41 秒</sub><br><br>
+      <a href="https://github.com/user-attachments/assets/20b88cde-d3a8-4e6d-a7c2-dd03dcecf62d"><img src="assets/examples/jensen-huang-cover.jpg" alt="黄仁勋身穿皮夹克坐在扶手椅上对谈，双语字幕 we don't control. / 我们无法控制。" width="400"></a>
+    </td>
+    <td width="50%" align="center" valign="top">
+      <strong>用你触动的生命衡量自己</strong><br>
+      <sub>蒂姆·库克 · 2017 MIT 毕业演讲 · 40 秒</sub><br><br>
+      <a href="https://github.com/user-attachments/assets/fff07ac3-496f-42c3-8473-74265ec1ab28"><img src="assets/examples/tim-cook-cover.jpg" alt="蒂姆·库克身穿学位袍在讲台演讲，双语字幕 Don't get caught up in the trivial aspects of life. / 别困在生活中那些无足轻重的事情里。" width="400"></a>
     </td>
   </tr>
 </table>
 
+<details>
+<summary><strong>▶ 在本页直接播放全部样片</strong></summary>
+
+<br>
+
+**把生活留给值得的人和事** · 泰勒·斯威夫特
+
+https://github.com/user-attachments/assets/bba4e597-c5b5-4e02-9549-5233923adf8b
+
+**毅力，就是热情与坚持** · 安吉拉·达克沃斯
+
+https://github.com/user-attachments/assets/c9ec7ee7-e4c9-46ba-ae8a-7bed21bd6f5b
+
+**做出只属于你的贡献** · 黄仁勋
+
+https://github.com/user-attachments/assets/20b88cde-d3a8-4e6d-a7c2-dd03dcecf62d
+
+**用你触动的生命衡量自己** · 蒂姆·库克
+
+https://github.com/user-attachments/assets/fff07ac3-496f-42c3-8473-74265ec1ab28
+
+</details>
+
 - **A-roll**：开头是演讲原画面，抛出主题句；原声全程保留，没有背景音乐。
-- **B-roll**：从用户确认的切入点开始，接入从素材库随机抽到的海浪、日落等风景素材，静音、叠化衔接。
+- **B-roll**：从用户确认的切入点开始，接入从素材库随机抽到的海浪、日落、城市夜景等风景素材，静音、叠化衔接。
 - **字幕**：英上中下、白色粗体黑描边，每种语言一行，B-roll 段同样保持同步。
 
 <div align="right"><a href="#readme-top">↑ 回到顶部</a></div>
