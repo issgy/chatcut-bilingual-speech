@@ -1,10 +1,8 @@
 {
   "broll_library": {
-    "provider": "google_drive",
-    "folder_url_or_id": null
+    "location": null
   },
   "delivery": {
-    "provider": "local",
     "output_dir": null
   },
   "subtitle_style": {
