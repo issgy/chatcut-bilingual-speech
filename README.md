@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="assets/banner-zh.jpg" alt="chatcut-bilingual-speech 头图：深色背景上铺满双语成片画面，左侧标题「英文演讲里的励志金句，剪成中英双语短视频」，下方是带六个确认节点的字幕、B-roll、A-roll 三轨时间轴示意" width="880">
+  <img src="assets/banner-zh.jpg" alt="chatcut-bilingual-speech 头图：深色背景上铺满双语成片画面，左侧标题「英文演讲里的励志金句，剪成中英双语短视频」，下方是字幕、B-roll、A-roll 三轨剪辑时间轴示意" width="880">
 
   <p><strong>把英文演讲里的励志金句，剪成中英双语短视频</strong><br>
   <sub>可编辑时间轴，不出扁平成片 · 六个节点等你确认 · 交付核验后才算完成</sub></p>
