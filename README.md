@@ -22,9 +22,7 @@
     <img src="https://img.shields.io/badge/agent%20skills-open%20format-f97316?labelColor=black&style=flat-square" alt="开放 Agent Skills 格式">
     <img src="https://img.shields.io/badge/editor-ChatCut-369eff?labelColor=black&style=flat-square" alt="基于 ChatCut">
     <img src="https://img.shields.io/badge/works%20with-Claude%20Code%20%C2%B7%20Codex%20%C2%B7%20WorkBuddy-10a37f?labelColor=black&style=flat-square" alt="支持 Claude Code、Codex、WorkBuddy">
-    <!-- TODO(许可证)：仓库加上 LICENSE 文件后取消注释
-    <a href="LICENSE"><img src="https://img.shields.io/github/license/issgy/chatcut-bilingual-speech?color=white&labelColor=black&style=flat-square" alt="License"></a>
-    -->
+    <a href="LICENSE"><img src="https://img.shields.io/github/license/issgy/chatcut-bilingual-speech?color=white&labelColor=black&style=flat-square" alt="MIT License"></a>
   </p>
 </div>
 
@@ -413,6 +411,7 @@ chatcut-bilingual-speech/
 ├── SKILL.md                  # 主流程与六个确认节点
 ├── config.example.json       # 示例配置（不含真实地址）
 ├── assets/                   # README 头图与成品案例封面（不影响 Skill 运行）
+├── LICENSE                   # MIT 许可证
 └── references/
     ├── setup.md              # 配置与接入说明
     ├── topic-map.md          # 主题地图规则与 topic-map.json 格式
@@ -445,10 +444,10 @@ chatcut-bilingual-speech/
 | 📕 小红书 | [你的昵称](你的主页链接) |
 -->
 
-<!-- TODO(许可证)：确定许可证后取消注释
 ## 开源许可
 
-Skill 指令采用 [MIT License](LICENSE)。输入视频、B-roll 素材、生成的成片及其中出现的第三方内容，不因本许可证获得额外授权。
--->
+Skill 指令、配置示例与文档采用 [MIT License](LICENSE)，可以自由使用、修改和再分发，包括商用，只需保留版权声明。
+
+成品案例中的演讲视频、画面及其中的第三方内容（包括头图与封面里的演讲画面）仅用于展示 Skill 的输出效果，不在 MIT 许可范围内，也不因本许可证获得任何额外授权。你用本 Skill 处理的源视频与素材，其使用权仍需你自行确认。
 
 <div align="right"><a href="#readme-top">↑ 回到顶部</a></div>
